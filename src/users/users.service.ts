@@ -8,6 +8,14 @@ export class UsersService {
     findAll(){
         return this.users;
     }
+    findByName(name?:string):User[]{
+        if(name){
+            return this.users.filter(user=>user.name===name)
+        }
+        // return this.users
+
+
+    }
     findById(userId:number):User{
         return this.users.find(user=>user.id ===userId )
     }
